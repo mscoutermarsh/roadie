@@ -61,11 +61,11 @@ module Roadie
     #
     # @return [String] the transformed HTML
     def transform
-      dom = Nokogiri::HTML.parse html
+      dom = Nokogiri::HTML.fragment html
 
       callback before_transformation, dom
 
-      improve dom
+      # improve dom
       inline dom
       rewrite_urls dom
 
